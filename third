@@ -1,0 +1,18 @@
+n, k = map(int, input().split())
+
+snow = [0] * (n + 1) 
+
+for _ in range(k):
+    parts = list(map(int, input().split()))
+    
+    if parts[0] == 1:
+        i = parts[1]
+        x = parts[2]
+        snow[i] += x
+    else:
+        u = parts[1]
+        r = parts[2]
+        total = 0
+        for j in range(u, r):  
+            total += snow[j]
+        print(total)
