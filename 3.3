@@ -1,0 +1,23 @@
+n, k = map(int, input().split())
+
+snow = [0] * (n + 1)
+
+results = []
+
+for _ in range(k):
+    query = list(map(int, input().split()))
+
+    if query[0] == 1:
+        i = query[1]
+        x = query[2]
+        snow[i] += x
+
+    elif query[0] == 2:
+        u = query[1]
+        r = query[2]
+        total = 0
+        for j in range(u, r + 1):
+            total += snow[j]
+        results.append(total)
+
+print('\n'.join(map(str, results)))
