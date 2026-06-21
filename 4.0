@@ -1,0 +1,12 @@
+n, k = map(int, input().split())
+P = list(map(int, input().split()))
+s = input()
+
+word = list(s)
+
+for step in range(k):
+    new_word = [''] * n
+    for i in range(n):
+        new_word[i] = word[P[i] - 1]
+    word = new_word
+    print(''.join(word))  
