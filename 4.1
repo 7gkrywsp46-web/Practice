@@ -1,0 +1,13 @@
+n, k = map(int, input().split())
+P = list(map(int, input().split()))
+s = list(input())
+
+for step in range(k):
+    new_word = [''] * n
+    for i in range(n):
+        # ищу куда поставить букву s[i], это позиция P[i]-1
+        pos = P[i] - 1
+        new_word[pos] = s[i]
+    s = new_word
+
+print(''.join(s))
