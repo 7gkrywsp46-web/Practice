@@ -1,0 +1,16 @@
+n = int(input())
+
+for _ in range(n):
+    a, b, x, y = map(int, input().split())
+
+    best = 0
+
+    for i in range(a + 1): 
+        for j in range(a + 1): 
+            for k in range(b + 1): 
+                if i + j <= a and k <= b and i + k <= x and j <= y:
+                    total = i + j + k
+                    if total > best:
+                        best = total
+
+    print(best)
