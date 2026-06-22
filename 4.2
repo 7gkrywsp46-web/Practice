@@ -1,0 +1,16 @@
+n, k = map(int, input().split())
+P = list(map(int, input().split()))
+s = input()
+
+inv = [0] * n
+for i in range(n):
+    inv[P[i] - 1] = i
+
+word = list(s)
+for _ in range(k):
+    new_word = [''] * n
+    for i in range(n):
+        new_word[i] = word[inv[i]]
+    word = new_word
+
+print(''.join(word))
