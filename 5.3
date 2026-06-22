@@ -1,0 +1,23 @@
+h, w = map(int, input().split())
+
+matrix = []
+for i in range(h):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+ones = []
+for i in range(h):
+    for j in range(w):
+        if matrix[i][j] == 1:
+            ones.append((i, j))
+
+min_row = min(p[0] for p in ones)
+max_row = max(p[0] for p in ones)
+min_col = min(p[1] for p in ones)
+max_col = max(p[1] for p in ones)
+
+r1 = min_row - 1 
+c1 = min_col - 1  
+r2 = max_row + 1  
+c2 = max_col + 1 
+print(r1, c1, r2, c2)
